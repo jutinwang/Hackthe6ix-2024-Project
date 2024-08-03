@@ -1,14 +1,10 @@
-import logo from './logo.svg';
-import Fridge from './Fridge';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <Fridge />
-      </header>
-    </div>
+      <div className="App">
+        <div className='app-body'></div>
+      </div>
   );
 }
 
