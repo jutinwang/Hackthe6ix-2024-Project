@@ -37,5 +37,5 @@
     display: none;
 }
 .fridge-info.show{
-    display: block;
+    display: grid;
 }
