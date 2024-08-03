@@ -1,8 +1,10 @@
 require('dotenv').config();
 const OpenAI = require('openai');
 
+const key = ''
+
 const openai = new OpenAI({
-    apiKey: apiUrl,
+    apiKey: key,
 })
 
 async function queryOpenAI(prompt) {
