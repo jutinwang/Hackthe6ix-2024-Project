@@ -1,6 +1,8 @@
 .App {
   text-align: center;
   background-color: #090B20;
+  box-sizing: border-box;
+  height: 100vh;
 }
 
 .App-logo {
@@ -41,9 +43,11 @@
 
 .app-body{
   width: 80%;
-  height: 100vh;
+  height: 92vh;
   background-image: url('./images/fridge/kitchen.svg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  box-sizing: border-box;
+  padding: 2em;
 }
