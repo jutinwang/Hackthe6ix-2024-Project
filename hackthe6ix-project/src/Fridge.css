@@ -1,0 +1,21 @@
+/* src/Fridge.css */
+.fridge-container {
+    perspective: 1000px;
+  }
+  
+  .fridge-door {
+    transform-style: preserve-3d;
+    transform-origin: left center;
+  }
+  
+  .fridge-image {
+    width: 200px;
+    cursor: pointer;
+  }
+  
+  .fridge-content {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+  }
+  
