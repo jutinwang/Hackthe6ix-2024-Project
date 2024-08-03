@@ -13,3 +13,29 @@
     background-color: transparent;
     cursor: pointer;
 }
+.fridge-content{
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    height: 65vh;
+    width: 30vw;
+    background-color: #0a284a;
+    padding: 1em;
+    box-sizing: border-box;
+    display: none;
+}
+.fridge-content.show{
+    display: block;
+}
+.fridge-info{
+    height: 100%;
+    width: 100%;
+    background-color: #F0EAD6;
+    border: 1px solid #d7b031;
+    box-shadow: 3px 3px #070c20;
+    cursor: pointer;
+    display: none;
+}
+.fridge-info.show{
+    display: block;
+}
