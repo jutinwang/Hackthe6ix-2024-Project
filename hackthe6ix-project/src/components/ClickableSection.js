@@ -1,12 +1,12 @@
 import React, {useState} from "react";
 import './clickable-section.css';
+import FridgeGrid from "./FridgeGrid";
 
 export default function ClickableSection(){
 
     const [openFridge, setOpenFridge] = useState(false);
 
     const handleFridgeClick = () => {
-        console.log('fridge has been clicked');
         setOpenFridge(!openFridge)
     }
 
@@ -15,9 +15,7 @@ export default function ClickableSection(){
             <div className="fridge-body" onClick={() => handleFridgeClick()}>
             </div>
             <div className={`fridge-content ${openFridge ? 'show' : ''}`}>
-                <div className={`fridge-info ${openFridge ? 'show' : ''}`}>
-
-                </div>
+                <FridgeGrid openFridge={openFridge}/>
             </div>
         </div>
     )

@@ -1,0 +1,17 @@
+.fridge-info{
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.fridge-info .grid-item {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2em;
+}
+.fridge-info .grid-item:hover{
+    cursor: pointer;
+}
