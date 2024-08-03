@@ -1,0 +1,15 @@
+.health-bar {
+    width: 25%;
+    background-color: #ddd;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    height: 20px;
+    margin: 10px 0;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .health-fill {
+    height: 100%;
+    transition: width 0.3s ease-in-out;
+  }
