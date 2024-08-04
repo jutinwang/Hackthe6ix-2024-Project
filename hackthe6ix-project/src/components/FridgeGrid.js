@@ -11,17 +11,17 @@ export default function FridegGrid({ openFridge, setDisplayFood }) {
     const [items, setItems] = useState([]);
     const [rows, setRows] = useState(0);
 
-    const handleCheckboxChange = (index) => {
+    const handleCheckboxChange = (foodName) => {
         setCheckedItems(prevCheckedItems => {
-            const newCheckedItems = [...prevCheckedItems];
-            newCheckedItems[index] = !newCheckedItems[index];
+            const newCheckedItems = { ...prevCheckedItems };
+            newCheckedItems[foodName] = !newCheckedItems[foodName];
             
-            const itemLabel = `Item ${index + 1}`;
-            const newCheckedLabels = newCheckedItems[index]
-                ? [...checkedLabels, itemLabel]
-                : checkedLabels.filter(label => label !== itemLabel);
-
+            const newCheckedLabels = newCheckedItems[foodName]
+                ? [...checkedLabels, foodName]
+                : checkedLabels.filter(label => label !== foodName);
+    
             setCheckedLabels(newCheckedLabels);
+            setActiveIngredients(newCheckedLabels);
             return newCheckedItems;
         });
     };
@@ -47,8 +47,8 @@ export default function FridegGrid({ openFridge, setDisplayFood }) {
                     <input 
                         type="checkbox" 
                         id={`checkbox-${index}`} 
-                        checked={checkedItems[index]} 
-                        onChange={() => handleCheckboxChange(index)} 
+                        checked={checkedItems[grocery.food] || false} 
+                        onChange={() => handleCheckboxChange(grocery.food)} 
                     />
                     <label htmlFor={`checkbox-${index}`} onClick={() => {setDisplayFood(items[index])}}><img className="food-image" src={foodMap.get(grocery.food)}></img></label>
                 </div>
