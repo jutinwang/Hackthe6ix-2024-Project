@@ -40,8 +40,6 @@ export default function FridegGrid({ openFridge, setDisplayFood }) {
         // }
     }, []);
 
-
-    console.log(foodMap.get("strawberry"))
     return (
         <div className={`fridge-info ${openFridge ? 'show' : ''}`} style={{gridTemplateRows: `repeat(${rows}, 1fr)`}}>
             {items.map((grocery, index) => (
