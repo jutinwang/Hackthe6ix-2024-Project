@@ -1,22 +1,18 @@
 .fridge-info{
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(4, 1fr);
-    gap: 10px;
 }
 .fridge-info .grid-item:hover{
     cursor: pointer;
 }
 .grid-item {
     position: relative; 
-    background-color: #f0f0f0;
-    border: 1px solid #ccc;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 1.2em;
-    padding: 10px;
+    box-sizing: border-box;
+    flex-direction: column;
 }
-
 .grid-item input[type="checkbox"] {
     position: absolute;
     top: 10px;
@@ -32,7 +28,14 @@
 }
 .grid-item label{
     cursor: pointer;
+    height: 5vw;
+    width: 5vw;
 }
 .show {
     display: block;
+}
+.food-image{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }

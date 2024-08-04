@@ -11,7 +11,7 @@ import porkImg from '../images/sprites/pork.png';
 import strawberryImg from '../images/sprites/strawberry.png';
 
 const foodMap = new Map([
-  ["Apple", appleImg],
+  ["apple", appleImg],
   ["banana", bananaImg],
   ["beef", beefImg],
   ["bread", breadImg],

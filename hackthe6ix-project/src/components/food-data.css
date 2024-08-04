@@ -1,0 +1,26 @@
+.food-data-body{
+    height: 100%;
+    width: 100%;
+    background-color: #F0EAD6;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1em;
+    box-sizing: border-box;
+}
+.food-data-body img{
+    height: 100%;
+    width: auto;
+}
+.food-details{
+    width: fit-content;
+    height: 100%;
+    font-family: 'Tiny5';
+}
+.food-title{
+    font-weight: 600;
+    font-size: 1.5em;
+}
+.food-details > div{
+    text-align: start;
+}
