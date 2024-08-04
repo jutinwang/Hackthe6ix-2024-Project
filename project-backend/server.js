@@ -1,3 +1,4 @@
+const queryOpenAI = require('./openai-api');
 const express = require('express');
 const { MongoClient } = require('mongodb');
 const cors = require('cors');
@@ -21,6 +22,17 @@ app.get('/foodInFridge', async(req,res) => {
     const data = await collection.find({}).toArray();
     console.log(data)
     res.json(data)
+  }
+  catch(error){
+    console.error('Error:', error);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+})
+
+app.get('/generateRecipeGPT', async(req,res) => {
+  try {
+      var data = await queryOpenAI('How much wood could a woodchuck chuck if a woodchuck could chuck wood?')
+      res.json(data)
   }
   catch(error){
     console.error('Error:', error);

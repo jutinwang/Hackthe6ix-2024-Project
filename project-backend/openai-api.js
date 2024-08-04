@@ -1,10 +1,9 @@
-require('dotenv').config();
 const OpenAI = require('openai');
-
-const key = ''
+const dotenv = require('dotenv');
+dotenv.config();
 
 const openai = new OpenAI({
-    apiKey: key,
+    apiKey: process.env.OPENAI_API_KEY,
 })
 
 async function queryOpenAI(prompt) {
@@ -17,11 +16,11 @@ async function queryOpenAI(prompt) {
             max_tokens: 100,
         });
   
-        console.log(response.choices[0].message.content.trim());
+        return response.choices[0].message.content.trim(); 
     } 
     catch (error) {
         console.error('Error querying OpenAI:', error);
     }
 }
 
-queryOpenAI('How much wood could a woodchuck chuck if a woodchuck could chuck wood?');
+module.exports = queryOpenAI;

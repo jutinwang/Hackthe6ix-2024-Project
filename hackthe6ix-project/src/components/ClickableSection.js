@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import './clickable-section.css';
 import FridgeGrid from "./FridgeGrid";
 import FoodData from "./FoodData";
+import axios from "axios";
 
 export default function ClickableSection(){
 
@@ -11,6 +12,16 @@ export default function ClickableSection(){
     const handleFridgeClick = () => {
         setOpenFridge(!openFridge)
     }
+
+    const handleRecipe = () => {
+        axios.get(`http://localhost:3001/generateRecipeGPT`)
+            .then(response => {
+              console.log(response.data)
+            })
+            .catch(error => {
+              console.error("Error fetching player data:", error);
+        });
+    };
 
     return(
         <div className="click-body">
@@ -22,7 +33,7 @@ export default function ClickableSection(){
             <div className="item-info">
                 <FoodData foodInfo={displayFood}/>
             </div>
-            <div className="generate-container">
+            <div className="generate-container" onClick={() => {handleRecipe()}}>
                 Generate Recipes!
             </div>
         </div>
