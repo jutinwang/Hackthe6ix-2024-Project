@@ -1,4 +1,5 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
+import axios from 'axios';
 import './fridge-grid.css';
 import './clickable-section.css';
 
@@ -6,6 +7,7 @@ export default function FridegGrid({ openFridge }) {
 
     const [checkedItems, setCheckedItems] = useState(Array(16).fill(false));
     const [checkedLabels, setCheckedLabels] = useState([]);
+    const [items, setItems] = useState([]);
 
     const handleCheckboxChange = (index) => {
         setCheckedItems(prevCheckedItems => {
@@ -21,6 +23,19 @@ export default function FridegGrid({ openFridge }) {
             return newCheckedItems;
         });
     };
+
+    useEffect(() => {
+        // if (player) {
+          axios.get(`http://localhost:3001/foodInFridge`)
+            .then(response => {
+              console.log(response)
+            })
+            .catch(error => {
+              console.error("Error fetching player data:", error);
+            });
+        // }
+    }, []);
+
 
     console.log(checkedLabels)
     return (
