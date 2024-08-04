@@ -1,0 +1,34 @@
+.recipe-list-details{
+    height: 100%;
+    width: 100%;
+    background-color: #0a284a;
+    padding: 1em;
+    box-sizing: border-box;
+    color: white;
+    font-family: 'Tiny5';
+}
+.recipe-list-header{
+    display: flex;
+    justify-content: space-between;
+}
+.recipe-list-content{
+    width: 100%;
+    height: 90%;
+}
+.recipe-item{
+    display: flex;
+    margin: 1.5em 0;
+    font-size: 1.3em;
+}
+.recipe-item:hover{
+    cursor: pointer;
+}
+.recipe-index{
+    margin-right: 10px;
+}
+.recipe-name{
+    text-align: start;
+}
+.exit-button:hover{
+    cursor: pointer;
+}

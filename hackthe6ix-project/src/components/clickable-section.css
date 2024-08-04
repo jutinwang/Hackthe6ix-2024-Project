@@ -47,6 +47,10 @@
     padding: 1em;
     box-sizing: border-box;
     background-color: #0a284a;
+    display: none;
+}
+.item-info.show{
+    display: block;
 }
 .generate-container{
     position: absolute;
@@ -58,13 +62,26 @@
     box-shadow: 3px 3px #d7b031;
     border: 1px solid #d7b031;
     font-family: 'Tiny5';
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     font-size: 1.5em;
+}
+.generate-container.show{
+    display: flex;
 }
 .generate-container:hover{
     transform: translate(-3px, -3px);
     box-shadow: 6px 6px #d7b031;
     cursor: pointer;
+}
+.recipe-list-body{
+    height: 80%;
+    width: 50%;
+    background-color: #ccc8a3;
+    padding: 1em;
+    box-sizing: border-box;
+    position: absolute;
+    top: 0%;
+    left: 0%;
 }
