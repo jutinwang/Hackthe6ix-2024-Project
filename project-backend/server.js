@@ -1,4 +1,5 @@
 const queryOpenAI = require('./openai-api');
+const fetchRecipeList = require('./edmam-api');
 const express = require('express');
 const { MongoClient } = require('mongodb');
 const cors = require('cors');
@@ -32,9 +33,21 @@ app.get('/foodInFridge', async(req,res) => {
 app.get('/generateRecipeGPT/:ingredients', async(req,res) => {
   try {
       const ingredients = req.params.ingredients;
-      var prompt = `Can you generate some meal ideas with the following ingredients ${ingredients}`
+      var prompt = `Can you generate some 5 meal ideas with the following ingredients ${ingredients}. Can your response have a + between each word and a | between each recipe?`
       var data = await queryOpenAI(prompt)
-      res.json(data)
+      var recipeIdeas = data.split('|');
+
+      var recipeDetails = []
+
+      for (let i = 0; i < recipeIdeas.length; i++) {
+          var newRecipeList = recipeIdeas[i].trim().split(" ");
+          var newRecipe = newRecipeList[newRecipeList.length - 1];
+
+          var newRecipeDetails = await fetchRecipeList(newRecipe);
+          recipeDetails.push(newRecipeDetails);
+      }
+
+      res.json(recipeDetails)
   }
   catch(error){
     console.error('Error:', error);
