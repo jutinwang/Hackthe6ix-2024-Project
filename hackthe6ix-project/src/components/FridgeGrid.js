@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react";
 import axios from 'axios';
 import './fridge-grid.css';
 import './clickable-section.css';
+import foodMap from "../backend-logic/hashmap";
 
 export default function FridegGrid({ openFridge }) {
 
@@ -37,7 +38,7 @@ export default function FridegGrid({ openFridge }) {
     }, []);
 
 
-    console.log(checkedLabels)
+    console.log(foodMap.get("strawberry"))
     return (
         <div className={`fridge-info ${openFridge ? 'show' : ''}`}>
             {[...Array(16)].map((_, index) => (
@@ -48,7 +49,7 @@ export default function FridegGrid({ openFridge }) {
                         checked={checkedItems[index]} 
                         onChange={() => handleCheckboxChange(index)} 
                     />
-                    <label htmlFor={`checkbox-${index}`}>Item {index + 1}</label>
+                    <label htmlFor={`checkbox-${index}`}><img src={foodMap.get("strawberry")}></img></label>
                 </div>
             ))}
         </div>
