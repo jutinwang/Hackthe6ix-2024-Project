@@ -29,9 +29,11 @@ app.get('/foodInFridge', async(req,res) => {
   }
 })
 
-app.get('/generateRecipeGPT', async(req,res) => {
+app.get('/generateRecipeGPT/:ingredients', async(req,res) => {
   try {
-      var data = await queryOpenAI('How much wood could a woodchuck chuck if a woodchuck could chuck wood?')
+      const ingredients = req.params.ingredients;
+      var prompt = `Can you generate some meal ideas with the following ingredients ${ingredients}`
+      var data = await queryOpenAI(prompt)
       res.json(data)
   }
   catch(error){

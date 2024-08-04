@@ -15,7 +15,12 @@ export default function ClickableSection(){
     }
 
     const handleRecipe = () => {
-        axios.get(`http://localhost:3001/generateRecipeGPT`)
+        const concatenated = activeIngredients.reduce((accumulator, currentValue) => {
+            return accumulator ? accumulator + ',' + currentValue : currentValue;
+        }, '');
+
+        console.log(concatenated)
+        axios.get(`http://localhost:3001/generateRecipeGPT/${concatenated}`)
             .then(response => {
               console.log(response.data)
             })
