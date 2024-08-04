@@ -55,6 +55,39 @@ app.get('/generateRecipeGPT/:ingredients', async(req,res) => {
   }
 })
 
+app.use(express.json()); // Middleware to parse JSON bodies
+
+app.post('/addFood', async (req, res) => {
+  try {
+    await client.connect();
+
+    const db = client.db(dbName);
+    const collection = db.collection('FoodInFridge');
+    
+    var { foodName, amount, datePurchased } = req.body;
+
+    if (!foodName || !amount || !datePurchased) {
+      return res.status(400).json({ error: 'Missing required fields' });
+    }
+
+    foodName = foodName.toLowerCase()
+
+    const newFoodItem = {
+      food: foodName,
+      amount: parseFloat(amount),
+      calories: parseFloat(amount) * 1.3, 
+      expiryDate: "24/09/2024"
+    };
+
+    await collection.insertOne(newFoodItem);
+
+    res.status(201).json({ message: 'Food added successfully' });
+  } catch (error) {
+    console.error('Error:', error);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+});
+
 app.listen(3001, () => {
   console.log(`Server is running on port 3001`);
 });

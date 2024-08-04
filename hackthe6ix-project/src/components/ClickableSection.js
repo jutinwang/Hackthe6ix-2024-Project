@@ -56,7 +56,7 @@ export default function ClickableSection(){
             <div
                 className={`generate-container ${openFridge ? 'show' : ''}`}
                 onClick={() => handleRecipe()}
-                style={{ display: recipesGenerated ? 'none' : (openFridge ? 'block' : 'none') }}
+                style={{ display: recipesGenerated ? 'none' : (openFridge ? 'flex' : 'none') }}
             >
                 Generate Recipes!
             </div>
