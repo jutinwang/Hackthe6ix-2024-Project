@@ -51,3 +51,59 @@
   box-sizing: border-box;
   padding: 2em;
 }
+
+/* Overlay title Content */
+.app-container {
+  position: relative;
+}
+
+.titleblock {
+  text-align: center;
+  background-image: url("./images/title/wood-background.png");
+  background-size: cover;
+  background-position: center;
+  padding: 20px;
+}
+
+.maintitle {
+  font-family: 'Tiny5';
+}
+
+.startButton {
+  font-family: 'Tiny5';
+  border-color: rgb(204,123,80);;
+  border-width: 10px;
+  background-color: rgb(235,197,138);
+  color: black;
+  margin-top: 10px;
+}
+
+.blur-background {
+  backdrop-filter: blur(8px);
+  pointer-events: none;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 10; /* Ensure it is above other content */
+}
+
+.overlay h1 {
+  font-size: 3em;
+  margin-bottom: 20px;
+}
+
+.overlay button {
+  padding: 10px 20px;
+  font-size: 1.5em;
+  cursor: pointer;
+}
