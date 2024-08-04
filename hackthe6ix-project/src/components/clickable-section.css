@@ -48,3 +48,23 @@
     box-sizing: border-box;
     background-color: #0a284a;
 }
+.generate-container{
+    position: absolute;
+    bottom: 2%;
+    left: 2%;
+    width: 20%;
+    height: 15%;
+    background-color: #ccc8a3;
+    box-shadow: 3px 3px #d7b031;
+    border: 1px solid #d7b031;
+    font-family: 'Tiny5';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+}
+.generate-container:hover{
+    transform: translate(-3px, -3px);
+    box-shadow: 6px 6px #d7b031;
+    cursor: pointer;
+}

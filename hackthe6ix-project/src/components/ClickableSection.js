@@ -22,6 +22,9 @@ export default function ClickableSection(){
             <div className="item-info">
                 <FoodData foodInfo={displayFood}/>
             </div>
+            <div className="generate-container">
+                Generate Recipes!
+            </div>
         </div>
     )
 }
