@@ -14,8 +14,10 @@ function App() {
     <div className="app-wrapper">
       {!start && (
         <div className="overlay">
-          <div className='maintitle'><h2>JASON TATUM</h2></div>
-          <div className='maintitle'><h1>GLAZE MACHINE</h1></div>
+            <div className='titleblock'>
+              <div className='maintitle'><h2>JASON TATUM</h2></div>
+              <div className='maintitle'><h1>GLAZE MACHINE</h1></div>
+            </div>
           <button className='startButton' onClick={handleStart}>Start</button>
         </div>
       )}

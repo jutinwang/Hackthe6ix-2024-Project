@@ -57,15 +57,25 @@
   position: relative;
 }
 
+.titleblock {
+  text-align: center;
+  background-image: url("./images/title/wood-background.png");
+  background-size: cover;
+  background-position: center;
+  padding: 20px;
+}
+
 .maintitle {
   font-family: 'Tiny5';
 }
 
 .startButton {
   font-family: 'Tiny5';
-  border-color: green;
+  border-color: rgb(204,123,80);;
   border-width: 10px;
-  background-color: white;
+  background-color: rgb(235,197,138);
+  color: black;
+  margin-top: 10px;
 }
 
 .blur-background {
