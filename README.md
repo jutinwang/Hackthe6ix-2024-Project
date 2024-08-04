@@ -10,3 +10,5 @@
 
 ## Technologies Used:
 #### ReactJS (Javascript, HTML, CSS), MongoDB, OpenAI API, Edamam API
+
+![Logo](https://github.com/jutinwang/Hackthe6ix-2024-Project/blob/main/photos/image.png)
