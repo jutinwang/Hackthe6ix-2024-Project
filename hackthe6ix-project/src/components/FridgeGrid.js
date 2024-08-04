@@ -4,7 +4,7 @@ import './fridge-grid.css';
 import './clickable-section.css';
 import foodMap from "../backend-logic/hashmap";
 
-export default function FridegGrid({ openFridge, setDisplayFood }) {
+export default function FridegGrid({ openFridge, setDisplayFood, setActiveIngredients }) {
 
     const [checkedItems, setCheckedItems] = useState(Array(16).fill(false));
     const [checkedLabels, setCheckedLabels] = useState([]);

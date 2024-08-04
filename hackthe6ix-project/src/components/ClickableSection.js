@@ -8,6 +8,7 @@ export default function ClickableSection(){
 
     const [openFridge, setOpenFridge] = useState(false);
     const [displayFood, setDisplayFood] = useState(null);
+    const [activeIngredients, setActiveIngredients] = useState([])
 
     const handleFridgeClick = () => {
         setOpenFridge(!openFridge)
@@ -28,7 +29,7 @@ export default function ClickableSection(){
             <div className="fridge-body" onClick={() => handleFridgeClick()}>
             </div>
             <div className={`fridge-content ${openFridge ? 'show' : ''}`}>
-                <FridgeGrid openFridge={openFridge} setDisplayFood={setDisplayFood}/>
+                <FridgeGrid openFridge={openFridge} setDisplayFood={setDisplayFood} setActiveIngredients={setActiveIngredients}/>
             </div>
             <div className="item-info">
                 <FoodData foodInfo={displayFood}/>
